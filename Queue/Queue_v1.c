@@ -26,6 +26,7 @@ int dequeue(int* Queue);
 int IsQueueEmpty();//No used
 int IsQueueFull();//No used
 void Print_Queue(int* Queue);
+void Test_Queue(int* Queue);
 
 int IsQueueEmpty()
 {
@@ -98,14 +99,8 @@ void Print_Queue(int* Queue)
     printf("\n\n"RESET);
 }
 
-int main()
+void Test_Queue(int* Queue)
 {
-    printf("Hello Queue v1 (Array version)\n");
-    
-    int Queue[MAXSIZE];
-    for(int i = 0; i < size;i++)
-        Queue[i] = 0;
-    
     enqueue(Queue, 3);
     enqueue(Queue, 4);
     enqueue(Queue, 5);
@@ -143,5 +138,17 @@ int main()
     Print_Queue(Queue);
     enqueue(Queue, 13);
     enqueue(Queue, 14);
+}
+
+int main()
+{
+    printf("Hello Queue v1 (Array version)\n");
+    
+    int Queue[MAXSIZE];
+    for(int i = 0; i < size;i++)
+        Queue[i] = 0;
+
+    Test_Queue(Queue);
+
     return 0;
 }
